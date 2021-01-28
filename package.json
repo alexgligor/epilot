@@ -28,7 +28,7 @@
     "build": "tsc",
     "dev": "ts-node-dev --respawn -- src/server.ts",
     "test": "jest --maxWorkers=1",
-    "package": "copy \"./package.json\" \"./build\" && copy \"./Dockerfile\" \"./build\"",
+    "package": "cp \"./package.json\" \"./build\" && cp \"./Dockerfile\" \"./build\"",
     "dependency": "npm run build && npm run package",
     "dockerBuild": "docker build -t epilothomework:latest ./build",
     "runDocker": "docker run -it -d -p 1342:1342 epilothomework:latest",
