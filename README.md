@@ -3,6 +3,7 @@
 * [Source Download](#source-download)
 * [Instalation](#instalation)
 * [Services Derails](#services-details)
+* [Examples](#examples)
 * [Requirements](#requirements)
 
 ## General info
@@ -75,6 +76,17 @@ Services:
             - JSON object with properety:
                 - message (string)
                     - No repository found at path
+
+## Examples
+
+Use PostMan in order to execute the examples, or execute the URL from your browser
+
+Ex 1:Check if 'traccar' repository has more addition then deletions in last week
+  Make a get request with localhost:1342/v1/downwards/traccar
+
+Ex 2:Check if 'paulmillr' GitHub user has commited code in last 24 hours.
+  Make a get request with localhost:1342/v1/active/paulmillr
+
 
 ## Requirements
 
