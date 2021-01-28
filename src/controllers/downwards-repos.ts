@@ -7,7 +7,7 @@ import { logger } from '../config/logger';
 const SEVEN_DAYS = 7 * 24 * 60 * 60 * 1000;
 
 export const downwardsController = async (req: Request, res: Response, next: NextFunction) => {
-    const repoName = req.params.repoName;
+    const repoName = req.params.repo;
     const userName = req.query.userName;
     const timeFromLastSevenDays = Date.now() - SEVEN_DAYS;
     const secondsFromLastSevenDays = timeFromLastSevenDays.toString().substr(0, 10);

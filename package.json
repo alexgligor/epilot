@@ -31,9 +31,9 @@
     "package": "copy \"./package.json\" \"./build\" && copy \"./Dockerfile\" \"./build\"",
     "dependency": "npm run build && npm run package",
     "dockerBuild": "docker build -t epilothomework:latest ./build",
-    "dockerRun": "docker run -it -d -p 1342:1342 epilothomework:latest",
+    "runDocker": "docker run -it -d -p 1342:1342 epilothomework:latest",
     "dockerStop": "docker stop epilothomework",
-    "prepare": "npm run dependency && npm run && npm run dockerBuild && npm run dockerRun"
+    "prepare": "npm run dependency && npm run && npm run dockerBuild "
   },
   "author": "Gligor Dan Alexandru",
   "license": "ISC"

@@ -5,7 +5,7 @@ import { arePushEventsInLast24Hours, Status } from '../services/github-users';
 import { env } from '../config/config';
 
 export const activeUsersController = async (req: Request, res: Response, next: NextFunction) => {
-    const username = req.params.userName;
+    const username = req.params.user;
 
     if (!username) {
         return res.status(400).json({
