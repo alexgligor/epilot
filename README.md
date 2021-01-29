@@ -5,6 +5,7 @@
 * [Services Derails](#services-details)
 * [Examples](#examples)
 * [Requirements](#requirements)
+* [Manual Docker Image Build](#manual-docker-image-build)
 
 ## General info
 
@@ -22,12 +23,14 @@ or clone the repository using:
 ## Instalation
 
 * Prerequsites
-Npm and Docker installed localy
+Docker installed localy
 
 * Steps
 To run this project, download the source and then perform the following steps:
 $ cd ../epilot
-$ npm install
+$ npm install --ignore-scripts
+$ npm run prepareDockerContainer
+$ npm run startDocker (to stop Docker container execute "npm run stopDocker")
 
 * Expected result
 ** Docker image 'epilothomework:latest' was created.
@@ -96,3 +99,18 @@ Write a small Node.js application that interacts with github.com and exposes 2 R
 Package the application as a Docker container.
 
 No github specific client library or sdk is allowed. Other third party packages and frameworks are allowed.
+
+## Manual Docker Image Build
+
+* Prerequsites
+Docker installed locally.
+Source code downloaded locally form https://github.com/alexgligor/epilot
+
+* Steps
+$ cd ../epilot
+$ Change your directory to /epilot
+$ Execute "npm install --ignore-scripts"
+$ Execute "npm run build"
+$ Copy Dockerfile and package.json file in the /epilot folder
+$ Execute "docker build -t epilothomework:latest ./build" to build the Docker container
+$ Execute "docker run -it -d -p 1342:1342 epilothomework:latest" to run Docker container exposed on port 1342
